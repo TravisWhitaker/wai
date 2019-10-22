@@ -69,7 +69,7 @@ data FdEntry = FdEntry !FilePath !Fd !MutableStatus
 
 openFile :: FilePath -> IO Fd
 openFile path = do
-    fd <- openFd path ReadOnly Nothing defaultFileFlags{nonBlock=False}
+    fd <- openFd path ReadOnly defaultFileFlags{nonBlock=False}
     setFileCloseOnExec fd
     return fd
 
